@@ -4,11 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
+
 
 public class ProfileActivity extends AppCompatActivity {
 
     TextView tvEmail, tvPassword;
+    Button btnRegreso;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,5 +23,9 @@ public class ProfileActivity extends AppCompatActivity {
         String password = intent.getStringExtra("password");
         tvEmail.setText("Bienvenido " + email);
         tvPassword.setText("Su contrasña es: " + password);
+    }
+    public void regreso(){
+        Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
+        startActivity(intent);
     }
 }
